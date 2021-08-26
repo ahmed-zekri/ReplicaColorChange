@@ -265,4 +265,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8178281808930187890, guid: bd5ad3f97bf940646b65e7436a3644d6, type: 3}
   circlePrefab: {fileID: 1373692971720312, guid: 2c369fc7dea438c4797da9d67fec4cb4, type: 3}
+  largeCirclePrefab: {fileID: 744816594382841113, guid: 2a92931c58045584a99c25c3d8b7ea84, type: 3}
   colorChangerPrefab: {fileID: 8167236394782240527, guid: 7059b56b41af669449fdcb49bc2a0458, type: 3}
