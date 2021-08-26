@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator RespawnCircles()
     {
         GameObject circle = Instantiate(circlePrefab, Camera.main.transform.position + Vector3.up * 3 + Vector3.forward * 10, Quaternion.identity);
-        GameObject colorChanger = Instantiate(colorChangerPrefab, circle.transform.position + Vector3.up * 2, Quaternion.identity);
+        GameObject colorChanger = Instantiate(colorChangerPrefab, circle.transform.position + Vector3.up * 3, Quaternion.identity);
         lastPos = colorChanger.transform.position;
         while (true)
         {
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
             counter++;
             int randomNumber = Random.Range(2, 6);
             circle = Instantiate(circlePrefab, lastPos + (Vector3.up * randomNumber), Quaternion.identity);
-            colorChanger = Instantiate(colorChangerPrefab, circle.transform.position + Vector3.up * 2, Quaternion.identity);
+            colorChanger = Instantiate(colorChangerPrefab, circle.transform.position + Vector3.up * 3, Quaternion.identity);
             lastPos = colorChanger.transform.position;
 
         }
