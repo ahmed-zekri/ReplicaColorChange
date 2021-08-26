@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject circlePrefab;
     [SerializeField]
+    GameObject largeCirclePrefab;
+    [SerializeField]
     GameObject colorChangerPrefab;
 
     int counter;
@@ -41,9 +43,10 @@ public class GameManager : MonoBehaviour
 
             yield return new WaitUntil(() => player.transform.position.y > 4 * counter);
             counter++;
-            int randomNumber = Random.Range(2, 6);
-            circle = Instantiate(circlePrefab, lastPos + (Vector3.up * randomNumber), Quaternion.identity);
-            colorChanger = Instantiate(colorChangerPrefab, circle.transform.position + Vector3.up * 3, Quaternion.identity);
+            bool largeCircle = Random.Range(0, 3) == 1;
+            int randomNumber = Random.Range(largeCircle?5:3, largeCircle?8: 6);
+            circle = Instantiate(!largeCircle ? circlePrefab:largeCirclePrefab, lastPos + (Vector3.up * randomNumber), Quaternion.identity);
+            colorChanger = Instantiate(colorChangerPrefab, circle.transform.position + Vector3.up * (largeCircle?5:3), Quaternion.identity);
             lastPos = colorChanger.transform.position;
 
         }
